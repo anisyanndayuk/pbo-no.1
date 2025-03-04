@@ -1,0 +1,43 @@
+// Kelas Induk (Superclass)
+abstract class AlatMusik {
+    abstract void bunyikan(); // Metode abstrak yang harus diimplementasikan oleh subclass
+}
+
+// Kelas Turunan (Subclass) Gitar
+class Gitar extends AlatMusik {
+    @Override
+    void bunyikan() {
+        System.out.println("Gitar: Jreng... Jreng...");
+    }
+}
+
+// Kelas Turunan (Subclass) Flute
+class Flute extends AlatMusik {
+    @Override
+    void bunyikan() {
+        System.out.println("Flute: Fuu... Fuu...");
+    }
+}
+
+// Kelas Turunan (Subclass) Piano
+class Piano extends AlatMusik {
+    @Override
+    void bunyikan() {
+        System.out.println("Piano: Tiiing... Tiiing...");
+    }
+}
+
+// Kelas Utama (Main) untuk Menjalankan Program
+public class Main {
+    public static void main(String[] args) {
+        // Polimorfisme: Objek AlatMusik bisa menjadi Gitar, Flute, atau Piano
+        AlatMusik musik1 = new Gitar();
+        AlatMusik musik2 = new Flute();
+        AlatMusik musik3 = new Piano();
+        
+        // Memanggil metode yang sama tetapi menghasilkan output yang berbeda
+        musik1.bunyikan();
+        musik2.bunyikan();
+        musik3.bunyikan();
+    }
+}
